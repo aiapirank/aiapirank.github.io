@@ -535,16 +535,15 @@ a {
 
 .table-shell {
   position: relative;
-  min-height: 340px;
+  min-height: 0;
   margin-top: 18px;
-  border: 1px solid var(--ink);
-  background: var(--paper-raised);
-  box-shadow: var(--shadow);
+  border: 0;
+  background: transparent;
+  box-shadow: none;
 }
 
 .table-scroll {
-  overflow-x: auto;
-  overscroll-behavior: contain;
+  overflow: visible;
 }
 
 table {
@@ -1114,6 +1113,12 @@ thead .site-column {
 
   .method-grid {
     grid-template-columns: repeat(2, 1fr);
+  }
+
+  .table-scroll {
+    overflow-x: auto;
+    overscroll-behavior-x: contain;
+    overscroll-behavior-y: auto;
   }
 }
 
