@@ -1,10 +1,8 @@
 # AI API Rank
 
-一个以表格为核心的 AI API 中转站排行榜，用同一份公开数据对比站点的在线率、响应延迟、模型覆盖、用户评分、支付方式、退款和发票支持。
+这是我手工测试过大量API 中转站之后测试的结果.
+所有过程都是严格检测, 实时比较.
 
-> 计划访问地址：[https://aiapirank.github.io/](https://aiapirank.github.io/)
->
-> 排名只是筛选入口，不是对任何站点的背书。正式使用前请自行验证模型、账单、隐私政策和服务稳定性，并坚持小额充值。
 
 ## 先看结论
 
@@ -220,57 +218,3 @@ npm run sync
 └── README.md                            # 入门指南与部署说明
 ```
 
-## 本地预览
-
-浏览器不能从 `file://` 页面直接读取 `data.json`，请启动一个本地 HTTP 服务：
-
-```bash
-python3 -m http.server 8000
-```
-
-然后访问：
-
-```text
-http://127.0.0.1:8000/
-```
-
-## 发布到 `aiapirank.github.io`
-
-当前远程仓库名是 `aiapirank/ai-ranking`。如果保持这个名字，GitHub Pages 地址会是：
-
-```text
-https://aiapirank.github.io/ai-ranking/
-```
-
-如果需要根地址：
-
-```text
-https://aiapirank.github.io/
-```
-
-GitHub 仓库必须命名为：
-
-```text
-aiapirank/aiapirank.github.io
-```
-
-操作步骤：
-
-1. 在 GitHub 仓库的 **Settings → General** 中，把仓库名从 `ai-ranking` 改为 `aiapirank.github.io`。
-2. 更新本地远程地址：
-
-   ```bash
-   git remote set-url origin git@github-airank:aiapirank/aiapirank.github.io.git
-   ```
-
-3. 推送 `main` 分支。
-4. 打开 **Settings → Pages**。
-5. 在 **Build and deployment** 中选择 **Deploy from a branch**。
-6. 选择 `main` 和 `/(root)`，保存。
-7. 等待 GitHub 完成首次部署，然后访问 `https://aiapirank.github.io/`。
-
-GitHub Pages 默认使用 HTTPS。访问 `http://aiapirank.github.io/` 时会跳转到 HTTPS。
-
-## 免责声明
-
-本项目只整理公开信息和监测数据，不运营榜单中的任何中转站，也不保证数据永久准确。任何 API 服务都可能发生价格变动、模型下架、上游切换、数据泄露、余额损失或停止运营。请勿上传敏感数据，正式业务应完成独立测试、合规审查和容灾设计。
