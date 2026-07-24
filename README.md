@@ -170,19 +170,54 @@ Claude Code、Codex、长对话和大型代码库分析会反复发送大量上�
 | 服务筛选 | 筛选支持退款、发票或两者都支持的站点 |
 | 多维排序 | 按综合排名、在线率、延迟、模型数量和用户评分排序 |
 | 移动端表格 | 保留语义化表格和固定核心列，可横向浏览完整数据 |
-| 无构建部署 | 纯 HTML、CSS 和 JavaScript，可直接运行在 GitHub Pages |
+| SEO 静态预渲染 | 生成器把 `data.json` 的全部站点写入 HTML，搜索引擎无需执行 JavaScript |
+| 渐进增强 | 静态表格始终可读，JavaScript 只增强搜索、筛选和排序 |
+
+## 生成静态 HTML
+
+`data.json` 是唯一的数据源。不要手动维护 `index.html` 中的排行榜行、榜单摘要或 JSON-LD；执行生成脚本即可一次更新全部 SEO 内容：
+
+```bash
+npm run build
+```
+
+生成器会同步更新：
+
+| 输出内容 | 作用 |
+| --- | --- |
+| 86 条完整 `<tr>` | 站点名称和指标直接存在于 HTML 源码 |
+| SEO 榜单摘要 | 自动写入前三名数据和前十五名名称 |
+| JSON-LD `ItemList` | 为全部站点生成结构化排名数据 |
+| 页面统计 | 更新站点数、平均在线率、平均延迟和厂商数 |
+| Meta description | 自动写入最新前三名和站点总数 |
+| `sitemap.xml` | 更新数据快照日期 |
+
+如需先从上游仓库同步最新 `data.json` 再生成页面：
+
+```bash
+npm run sync
+```
+
+`.github/workflows/update-ranking.yml` 每 6 小时自动执行一次同步和预渲染；数据发生变化时，会由 GitHub Actions 自动提交 `data.json`、`index.html` 和 `sitemap.xml`。
 
 ## 项目结构
 
 ```text
 .
-├── .nojekyll   # 告诉 GitHub Pages 直接发布静态文件
-├── index.html  # 页面结构与 SEO 信息
-├── styles.css  # 响应式页面和表格样式
-├── app.js      # 数据读取、筛选、排序和表格渲染
-├── data.json   # 排行榜数据
-├── favicon.svg # 站点图标
-└── README.md   # 中转站入门指南与部署说明
+├── .github/workflows/update-ranking.yml # 定时同步和生成页面
+├── scripts/generate-static-page.mjs     # HTML 静态预渲染生成器
+├── .nojekyll                            # 直接发布静态文件
+├── package.json                         # build 和 sync 命令
+├── index.html                           # 含完整排行榜数据的生成结果
+├── styles.css                           # 响应式页面和表格样式
+├── app.js                               # 搜索、筛选和排序增强
+├── data.json                            # 唯一排行榜数据源
+├── favicon.svg                          # 站点图标
+├── og-image.png                         # 搜索和社交分享预览图
+├── og-image.svg                         # 分享图源文件
+├── robots.txt                           # 搜索引擎抓取规则
+├── sitemap.xml                          # 网站地图
+└── README.md                            # 入门指南与部署说明
 ```
 
 ## 本地预览

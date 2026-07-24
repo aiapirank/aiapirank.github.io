@@ -183,12 +183,12 @@ a {
 
 .hero {
   display: grid;
-  grid-template-columns: minmax(0, 1.35fr) minmax(360px, 0.65fr);
-  gap: clamp(64px, 9vw, 150px);
+  grid-template-columns: minmax(0, 1.2fr) minmax(360px, 0.65fr);
+  gap: clamp(56px, 7vw, 110px);
   align-items: center;
-  min-height: 670px;
-  padding-top: 80px;
-  padding-bottom: 88px;
+  min-height: 570px;
+  padding-top: 88px;
+  padding-bottom: 96px;
 }
 
 .kicker,
@@ -221,25 +221,30 @@ a {
 }
 
 .hero h1 {
-  max-width: 840px;
+  max-width: 900px;
   margin: 0;
-  font-size: clamp(48px, 6.5vw, 96px);
+  font-size: clamp(52px, 5.3vw, 82px);
   font-weight: 800;
-  letter-spacing: -0.075em;
-  line-height: 0.98;
+  letter-spacing: -0.065em;
+  line-height: 1.08;
 }
 
-.hero h1 em {
-  color: var(--blue);
-  font-style: normal;
+.hero-subtitle {
+  max-width: 900px;
+  margin: 28px 0 0;
+  color: var(--blue-dark);
+  font-size: clamp(20px, 2.1vw, 29px);
+  font-weight: 750;
+  letter-spacing: -0.035em;
+  line-height: 1.55;
 }
 
 .hero-description {
-  max-width: 660px;
-  margin: 34px 0 0;
-  color: var(--ink-soft);
-  font-size: 17px;
-  line-height: 1.8;
+  max-width: 760px;
+  margin: 20px 0 0;
+  color: var(--muted);
+  font-size: 15px;
+  line-height: 1.75;
 }
 
 .hero-actions {
@@ -247,7 +252,7 @@ a {
   flex-wrap: wrap;
   gap: 25px;
   align-items: center;
-  margin-top: 40px;
+  margin-top: 32px;
 }
 
 .primary-action {
@@ -440,6 +445,35 @@ a {
   grid-template-columns: minmax(280px, 1.7fr) repeat(3, minmax(150px, 0.75fr)) auto;
   border: 1px solid var(--ink);
   background: var(--paper-raised);
+}
+
+.seo-ranking-summary {
+  margin-bottom: 24px;
+  border: 1px solid var(--line);
+  border-left: 4px solid var(--blue);
+  padding: 20px 22px;
+  background: rgba(255, 253, 248, 0.72);
+}
+
+.seo-ranking-summary h3 {
+  margin: 0 0 10px;
+  font-size: 15px;
+  font-weight: 800;
+  letter-spacing: -0.02em;
+}
+
+.seo-ranking-summary p {
+  margin: 6px 0 0;
+  color: var(--muted);
+  font-size: 12px;
+  line-height: 1.85;
+}
+
+.seo-ranking-summary a {
+  color: var(--blue-dark);
+  font-weight: 800;
+  text-decoration-thickness: 1px;
+  text-underline-offset: 3px;
 }
 
 .control-panel label {
@@ -1068,7 +1102,7 @@ thead .site-column {
   }
 
   .hero h1 {
-    font-size: clamp(48px, 6.5vw, 76px);
+    font-size: clamp(48px, 6vw, 70px);
   }
 
   .control-panel {
@@ -1163,11 +1197,16 @@ thead .site-column {
   }
 
   .hero h1 {
-    font-size: clamp(45px, 14vw, 65px);
+    font-size: clamp(43px, 12vw, 58px);
+  }
+
+  .hero-subtitle {
+    font-size: 20px;
+    line-height: 1.5;
   }
 
   .hero-description {
-    font-size: 15px;
+    font-size: 14px;
   }
 
   .snapshot-card {

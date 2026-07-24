@@ -1,0 +1,9 @@
+{
+  "name": "ai-api-rank",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "build": "node scripts/generate-static-page.mjs",
+    "sync": "node scripts/generate-static-page.mjs --sync"
+  }
+}

@@ -1,0 +1,31 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="630" viewBox="0 0 1200 630">
+  <defs>
+    <pattern id="grid" width="32" height="32" patternUnits="userSpaceOnUse">
+      <path d="M32 0H0V32" fill="none" stroke="#0b1020" stroke-opacity="0.06"/>
+    </pattern>
+  </defs>
+  <rect width="1200" height="630" fill="#f4f2ec"/>
+  <rect width="1200" height="630" fill="url(#grid)"/>
+  <rect x="0" y="0" width="1200" height="70" fill="#0b1020"/>
+  <rect x="50" y="22" width="7" height="26" fill="#fffdf8"/>
+  <rect x="65" y="12" width="7" height="36" fill="#ff6b35"/>
+  <rect x="80" y="29" width="7" height="19" fill="#fffdf8"/>
+  <text x="105" y="43" fill="#ffffff" font-family="Arial, PingFang SC, sans-serif" font-size="20" font-weight="700">AI API RANK / 2026</text>
+  <rect x="58" y="126" width="132" height="34" rx="17" fill="#ff6b35"/>
+  <text x="124" y="149" text-anchor="middle" fill="#0b1020" font-family="Arial, PingFang SC, sans-serif" font-size="15" font-weight="700">真实体验无赞助</text>
+  <text x="55" y="260" fill="#0b1020" font-family="Arial, PingFang SC, sans-serif" font-size="72" font-weight="800" letter-spacing="-3">2026AI中转站评测推荐</text>
+  <text x="58" y="323" fill="#1732b8" font-family="Arial, PingFang SC, sans-serif" font-size="29" font-weight="700">Claude Code · GPT · Grok · Gemini · GLM · Kimi</text>
+  <text x="58" y="377" fill="#687083" font-family="Arial, PingFang SC, sans-serif" font-size="22">对比 86 家中转站的在线率、延迟、模型覆盖、用户评分与服务政策</text>
+  <rect x="58" y="451" width="1084" height="108" fill="#fffdf8" stroke="#0b1020"/>
+  <line x1="326" y1="451" x2="326" y2="559" stroke="#cdd1da"/>
+  <line x1="597" y1="451" x2="597" y2="559" stroke="#cdd1da"/>
+  <line x1="868" y1="451" x2="868" y2="559" stroke="#cdd1da"/>
+  <text x="84" y="487" fill="#687083" font-family="Arial, PingFang SC, sans-serif" font-size="14">收录站点</text>
+  <text x="84" y="535" fill="#0b1020" font-family="Arial, sans-serif" font-size="36" font-weight="700">86</text>
+  <text x="352" y="487" fill="#687083" font-family="Arial, PingFang SC, sans-serif" font-size="14">平均在线率</text>
+  <text x="352" y="535" fill="#0b1020" font-family="Arial, sans-serif" font-size="36" font-weight="700">94.2%</text>
+  <text x="623" y="487" fill="#687083" font-family="Arial, PingFang SC, sans-serif" font-size="14">平均延迟</text>
+  <text x="623" y="535" fill="#0b1020" font-family="Arial, sans-serif" font-size="36" font-weight="700">6.3 s</text>
+  <text x="894" y="487" fill="#687083" font-family="Arial, PingFang SC, sans-serif" font-size="14">当前前三</text>
+  <text x="894" y="530" fill="#3157ff" font-family="Arial, PingFang SC, sans-serif" font-size="18" font-weight="700">CUN.ai · 9527code · ToolCode</text>
+</svg>
