@@ -1,0 +1,277 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta
+      name="description"
+      content="AI API 中转站排行榜：对比在线率、响应延迟、模型覆盖、用户评分、支付方式、退款和发票支持。"
+    />
+    <meta name="theme-color" content="#0b1020" />
+    <meta property="og:title" content="AI API Rank｜中转站排行榜" />
+    <meta
+      property="og:description"
+      content="用同一张数据表，对比 AI API 中转站的稳定性、速度、模型覆盖与服务能力。"
+    />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://aiapirank.github.io/" />
+    <link rel="canonical" href="https://aiapirank.github.io/" />
+    <link rel="icon" href="./favicon.svg" type="image/svg+xml" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&amp;family=Manrope:wght@400;500;600;700;800&amp;display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="./styles.css" />
+    <title>AI API Rank｜中转站排行榜</title>
+  </head>
+  <body>
+    <a class="skip-link" href="#ranking">跳转到排行榜</a>
+
+    <header class="site-header">
+      <div class="shell header-inner">
+        <a class="brand" href="#top" aria-label="AI API Rank 首页">
+          <span class="brand-mark" aria-hidden="true">
+            <span></span><span></span><span></span>
+          </span>
+          <span>
+            <strong>AI API</strong>
+            <small>RANK / 2026</small>
+          </span>
+        </a>
+
+        <nav class="site-nav" aria-label="主要导航">
+          <a href="#ranking">排行榜</a>
+          <a href="#methodology">怎么看</a>
+          <a href="https://github.com/aiapirank/ai-ranking#readme" target="_blank" rel="noreferrer">入门指南</a>
+        </nav>
+
+        <a class="github-link" href="https://github.com/aiapirank/ai-ranking" target="_blank" rel="noreferrer">
+          GitHub <span aria-hidden="true">↗</span>
+        </a>
+      </div>
+    </header>
+
+    <main id="top">
+      <section class="hero shell" aria-labelledby="page-title">
+        <div class="hero-copy">
+          <p class="kicker"><span></span> 独立数据快照 · 持续更新</p>
+          <h1 id="page-title">把中转站的<br /><em>真实差别</em><br />放进一张表。</h1>
+          <p class="hero-description">
+            不只比较价格。在线率、响应速度、模型覆盖、用户口碑和服务政策，才决定一个 API
+            中转站是否适合长期使用。
+          </p>
+          <div class="hero-actions">
+            <a class="primary-action" href="#ranking">查看完整榜单 <span aria-hidden="true">↓</span></a>
+            <a class="text-action" href="https://github.com/aiapirank/ai-ranking#readme" target="_blank" rel="noreferrer">先读选择指南 <span aria-hidden="true">→</span></a>
+          </div>
+        </div>
+
+        <aside class="snapshot-card" aria-label="数据快照">
+          <div class="snapshot-card__top">
+            <span>DATA SNAPSHOT</span>
+            <span class="status-pill"><i></i> LIVE</span>
+          </div>
+          <dl class="snapshot-grid">
+            <div>
+              <dt>收录站点</dt>
+              <dd id="site-count">--</dd>
+            </div>
+            <div>
+              <dt>平均在线率</dt>
+              <dd id="average-uptime">--</dd>
+            </div>
+            <div>
+              <dt>平均延迟</dt>
+              <dd id="average-latency">--</dd>
+            </div>
+            <div>
+              <dt>覆盖厂商</dt>
+              <dd id="vendor-count">--</dd>
+            </div>
+          </dl>
+          <div class="snapshot-card__footer">
+            <span>LAST UPDATE</span>
+            <strong id="updated-at">读取中</strong>
+          </div>
+        </aside>
+      </section>
+
+      <section class="signal-strip" aria-label="选站原则">
+        <div class="shell signal-strip__inner">
+          <p><span>01</span> 先看长期在线率</p>
+          <p><span>02</span> 再看高峰期延迟</p>
+          <p><span>03</span> 核实模型与账单</p>
+          <p><span>04</span> 永远小额充值</p>
+        </div>
+      </section>
+
+      <section class="ranking-section shell" id="ranking" aria-labelledby="ranking-title">
+        <div class="section-heading">
+          <div>
+            <p class="section-index">01 / RANKING TABLE</p>
+            <h2 id="ranking-title">AI API 中转站排行榜</h2>
+          </div>
+          <p id="result-summary" aria-live="polite">正在载入数据……</p>
+        </div>
+
+        <div class="control-panel" aria-label="排行榜筛选工具">
+          <label class="search-control">
+            <span class="control-label">搜索</span>
+            <span class="search-input-wrap">
+              <svg viewBox="0 0 24 24" aria-hidden="true">
+                <circle cx="11" cy="11" r="7"></circle>
+                <path d="m20 20-3.5-3.5"></path>
+              </svg>
+              <input id="search-input" type="search" placeholder="站点、域名、模型或支付方式" autocomplete="off" />
+            </span>
+          </label>
+
+          <label>
+            <span class="control-label">模型厂商</span>
+            <select id="vendor-filter">
+              <option value="all">全部厂商</option>
+            </select>
+          </label>
+
+          <label>
+            <span class="control-label">服务能力</span>
+            <select id="service-filter">
+              <option value="all">不限制</option>
+              <option value="refund">支持退款</option>
+              <option value="invoice">支持发票</option>
+              <option value="both">退款与发票</option>
+            </select>
+          </label>
+
+          <label>
+            <span class="control-label">排序</span>
+            <select id="sort-select">
+              <option value="rank">综合排名</option>
+              <option value="uptime">在线率从高到低</option>
+              <option value="latency">延迟从低到高</option>
+              <option value="models">模型数量从多到少</option>
+              <option value="rating">用户评分从高到低</option>
+            </select>
+          </label>
+
+          <button class="reset-button" id="reset-button" type="button">重置</button>
+        </div>
+
+        <div class="table-shell">
+          <div class="table-state" id="loading-state" role="status">
+            <span class="loader" aria-hidden="true"></span>
+            <p>正在读取排行榜数据</p>
+          </div>
+
+          <div class="table-state table-state--error" id="error-state" hidden>
+            <strong>数据加载失败</strong>
+            <p id="error-message">请稍后刷新页面。</p>
+            <button id="retry-button" type="button">重新加载</button>
+          </div>
+
+          <div class="table-state" id="empty-state" hidden>
+            <strong>没有找到匹配站点</strong>
+            <p>试试更换关键词或清除筛选条件。</p>
+          </div>
+
+          <div class="table-scroll" id="table-container" hidden>
+            <table>
+              <thead>
+                <tr>
+                  <th class="rank-column" scope="col">排名</th>
+                  <th class="site-column" scope="col">站点</th>
+                  <th scope="col">运行质量</th>
+                  <th scope="col">模型覆盖</th>
+                  <th scope="col">用户口碑</th>
+                  <th scope="col">支付方式</th>
+                  <th scope="col">服务政策</th>
+                </tr>
+              </thead>
+              <tbody id="ranking-body"></tbody>
+            </table>
+          </div>
+        </div>
+
+        <p class="data-note" id="data-note">
+          在线率和延迟会随时间、地区及网络环境波动，请在正式接入前自行进行小额测试。
+        </p>
+      </section>
+
+      <section class="methodology-section shell" id="methodology" aria-labelledby="methodology-title">
+        <div class="section-heading section-heading--methodology">
+          <div>
+            <p class="section-index">02 / HOW TO READ</p>
+            <h2 id="methodology-title">这张表应该怎么看？</h2>
+          </div>
+          <p>排名是入口，不是最终答案。</p>
+        </div>
+
+        <div class="method-grid">
+          <article>
+            <span class="method-number">01</span>
+            <h3>稳定优先</h3>
+            <p>在线率看长期可用性，延迟看调用体验。两项应结合判断，单次测速不能代表真实稳定性。</p>
+          </article>
+          <article>
+            <span class="method-number">02</span>
+            <h3>核实模型</h3>
+            <p>“支持某厂商”不代表所有模型都可用。正式使用前应核对模型版本、上下文限制和上游来源。</p>
+          </article>
+          <article>
+            <span class="method-number">03</span>
+            <h3>检查账单</h3>
+            <p>确认输入、输出、缓存 Token、充值倍率和模型倍率是否透明，不要只比较首页标价。</p>
+          </article>
+          <article class="method-card--accent">
+            <span class="method-number">04</span>
+            <h3>控制余额</h3>
+            <p>任何中转站都存在价格调整、模型下架或停止运营的风险。用多少充多少，不囤包月和大额余额。</p>
+          </article>
+        </div>
+      </section>
+
+      <section class="compare-section shell" aria-labelledby="compare-title">
+        <div class="compare-copy">
+          <p class="section-index">03 / QUICK COMPARE</p>
+          <h2 id="compare-title">官方 API 还是中转站？</h2>
+          <p>对隐私、稳定性要求高，并具备海外支付与网络条件时，优先官方；需要低门槛、多模型统一接入时，中转更方便。</p>
+          <a href="https://github.com/aiapirank/ai-ranking#readme" target="_blank" rel="noreferrer">阅读完整入门指南 <span aria-hidden="true">→</span></a>
+        </div>
+
+        <div class="mini-table-wrap">
+          <table class="mini-table">
+            <thead>
+              <tr><th>维度</th><th>官方 API</th><th>中转站</th></tr>
+            </thead>
+            <tbody>
+              <tr><th>稳定性</th><td>官方高可用</td><td>取决于中转运维</td></tr>
+              <tr><th>隐私性</th><td>请求直达官方</td><td>经过第三方系统</td></tr>
+              <tr><th>使用门槛</th><td>海外支付与网络</td><td class="highlight-cell">注册后即可接入</td></tr>
+              <tr><th>模型覆盖</th><td>单厂商为主</td><td class="highlight-cell">一个 Key 接多家</td></tr>
+            </tbody>
+          </table>
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <div class="shell footer-inner">
+        <div>
+          <a class="brand brand--footer" href="#top">
+            <span class="brand-mark" aria-hidden="true"><span></span><span></span><span></span></span>
+            <span><strong>AI API</strong><small>RANK / 2026</small></span>
+          </a>
+          <p>公开数据的另一种阅读方式。</p>
+        </div>
+        <div class="footer-meta">
+          <p>数据来源：<a href="https://www.hvoy.ai" target="_blank" rel="noreferrer">禾维 AI</a></p>
+          <p>仅供选择参考，不构成服务背书或购买建议。</p>
+        </div>
+      </div>
+    </footer>
+
+    <script src="./app.js" defer></script>
+  </body>
+</html>
