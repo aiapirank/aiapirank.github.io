@@ -543,8 +543,7 @@ a {
 }
 
 .table-scroll {
-  overflow: auto;
-  max-height: min(72vh, 900px);
+  overflow-x: auto;
   overscroll-behavior: contain;
 }
 
