@@ -241,10 +241,17 @@ function buildStructuredData(data, sites) {
         "@type": "Dataset",
         "@id": "https://aiapirank.github.io/#dataset",
         name: "2026 AI 中转站排行榜数据",
-        description: "收录 AI API 中转站排名、在线率、平均延迟、模型覆盖、用户评分、支付方式、退款和发票信息。",
+        description:
+          "基于真实体验与公开监测的 AI API 中转站排行榜数据集，收录 635 家中转站的排名、在线率、平均延迟、模型覆盖范围、用户评分、支付方式、退款与发票支持等结构化指标，供开发者对比参考。",
         url: "https://aiapirank.github.io/",
         dateModified: data.updatedDate || data.generatedAt,
         isAccessibleForFree: true,
+        license: "https://creativecommons.org/licenses/by-nc-sa/4.0/",
+        creator: {
+          "@type": "Organization",
+          name: "AI API Rank",
+          url: "https://aiapirank.github.io/",
+        },
         distribution: {
           "@type": "DataDownload",
           encodingFormat: "application/json",
