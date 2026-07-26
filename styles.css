@@ -1053,6 +1053,176 @@ thead .site-column {
   font-weight: 800;
 }
 
+.guide-section {
+  padding-bottom: 120px;
+}
+
+.guide-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 20px;
+  margin-top: 28px;
+}
+
+.guide-card {
+  border: 1px solid var(--line);
+  border-top: 3px solid var(--ink);
+  padding: 22px 20px;
+  background: var(--paper-raised);
+}
+
+.guide-card h3 {
+  margin: 0 0 12px;
+  font-size: 14px;
+  font-weight: 800;
+  letter-spacing: -0.02em;
+}
+
+.guide-card p {
+  margin: 0;
+  color: var(--muted);
+  font-size: 12px;
+  line-height: 1.85;
+}
+
+.faq-block {
+  margin-top: 44px;
+}
+
+.faq-block h3 {
+  margin: 0 0 18px;
+  font-size: 18px;
+  font-weight: 800;
+  letter-spacing: -0.02em;
+}
+
+.faq-list {
+  border-top: 1px solid var(--line);
+}
+
+.faq-item {
+  border-bottom: 1px solid var(--line);
+}
+
+.faq-item summary {
+  padding: 18px 34px 18px 0;
+  position: relative;
+  cursor: pointer;
+  font-size: 14px;
+  font-weight: 700;
+  list-style: none;
+}
+
+.faq-item summary::-webkit-details-marker {
+  display: none;
+}
+
+.faq-item summary::after {
+  content: "+";
+  position: absolute;
+  top: 50%;
+  right: 6px;
+  transform: translateY(-50%);
+  color: var(--blue);
+  font-size: 20px;
+  font-weight: 700;
+}
+
+.faq-item[open] summary::after {
+  content: "−";
+}
+
+.faq-item summary:hover {
+  color: var(--blue-dark);
+}
+
+.faq-item p {
+  margin: 0;
+  padding: 0 34px 22px 0;
+  color: var(--muted);
+  font-size: 13px;
+  line-height: 1.9;
+}
+
+.vendor-links {
+  margin-top: 44px;
+  padding-top: 32px;
+  border-top: 1px solid var(--line);
+}
+
+.vendor-links h3 {
+  margin: 0 0 8px;
+  font-size: 18px;
+  font-weight: 800;
+  letter-spacing: -0.02em;
+}
+
+.vendor-links > p {
+  margin: 0 0 20px;
+  color: var(--muted);
+  font-size: 13px;
+  line-height: 1.8;
+}
+
+.vendor-link-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.vendor-link-list a {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  border: 1px solid var(--line-dark);
+  padding: 9px 15px;
+  background: var(--paper-raised);
+  color: var(--ink);
+  font-size: 13px;
+  font-weight: 700;
+  text-decoration: none;
+  transition: border-color 0.15s ease, background 0.15s ease, color 0.15s ease;
+}
+
+.vendor-link-list a:hover {
+  border-color: var(--blue);
+  background: var(--paper-blue);
+  color: var(--blue-dark);
+}
+
+.vendor-link-list a span {
+  color: var(--muted);
+  font-family: "DM Mono", monospace;
+  font-size: 11px;
+}
+
+.vendor-link-list a:hover span {
+  color: var(--blue-dark);
+}
+
+.breadcrumb {
+  margin-bottom: 18px;
+  color: var(--muted);
+  font-size: 12px;
+  font-weight: 600;
+}
+
+.breadcrumb a {
+  color: var(--blue-dark);
+  font-weight: 700;
+}
+
+.breadcrumb span[aria-hidden] {
+  margin: 0 6px;
+  color: var(--line-dark);
+}
+
+.vendor-hero {
+  min-height: auto;
+  padding-top: 70px;
+  padding-bottom: 50px;
+}
+
 .site-footer {
   border-top: 1px solid var(--ink);
   background: var(--ink);
@@ -1105,6 +1275,10 @@ thead .site-column {
 
   .control-panel {
     grid-template-columns: 1.5fr repeat(2, 0.8fr) auto;
+  }
+
+  .guide-grid {
+    grid-template-columns: repeat(2, 1fr);
   }
 
   .control-panel label:nth-of-type(3) {
@@ -1184,6 +1358,14 @@ thead .site-column {
 @media (max-width: 620px) {
   .shell {
     width: min(100% - 24px, var(--shell));
+  }
+
+  .guide-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .guide-section {
+    padding-bottom: 80px;
   }
 
   .header-inner {
@@ -1316,4 +1498,39 @@ thead .site-column {
     animation-iteration-count: 1 !important;
     transition-duration: 0.01ms !important;
   }
+}
+
+.vendor-intro {
+  margin: 24px 0;
+  padding: 24px 26px;
+  border: 1px solid var(--line);
+  background: var(--paper-raised);
+}
+
+.vendor-intro h3 {
+  margin: 0 0 12px;
+  font-size: 15px;
+  font-weight: 800;
+  letter-spacing: -0.02em;
+}
+
+.vendor-intro p {
+  margin: 0;
+  color: var(--muted);
+  font-size: 13px;
+  line-height: 1.9;
+}
+
+.vendor-tip {
+  margin-top: 16px !important;
+  padding: 12px 15px;
+  border-left: 3px solid var(--orange);
+  background: var(--paper);
+  font-size: 12px !important;
+}
+
+.vendor-tip strong {
+  margin-right: 8px;
+  color: var(--ink);
+  font-weight: 800;
 }
