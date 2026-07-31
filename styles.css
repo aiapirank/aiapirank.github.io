@@ -110,7 +110,7 @@ a {
 }
 
 .brand strong {
-  font-size: 16px;
+  font-size: 17px;
   font-weight: 800;
   letter-spacing: -0.04em;
 }
@@ -119,8 +119,8 @@ a {
   margin-top: 5px;
   color: var(--muted);
   font-family: "DM Mono", monospace;
-  font-size: 9px;
-  letter-spacing: 0.14em;
+  font-size: 10px;
+  letter-spacing: 0.11em;
 }
 
 .brand-mark {
@@ -163,9 +163,9 @@ a {
 .github-link {
   color: var(--ink-soft);
   font-family: "DM Mono", monospace;
-  font-size: 11px;
+  font-size: 12px;
   font-weight: 500;
-  letter-spacing: 0.04em;
+  letter-spacing: 0.025em;
   text-decoration: none;
   text-transform: uppercase;
 }
@@ -173,6 +173,21 @@ a {
 .site-nav a:hover,
 .github-link:hover {
   color: var(--blue);
+}
+
+.site-nav a:focus-visible,
+.github-link:focus-visible,
+.primary-action:focus-visible,
+.text-action:focus-visible,
+.compare-copy a:focus-visible,
+.site-link:focus-visible,
+.vendor-link-list a:focus-visible,
+.faq-item summary:focus-visible,
+button:focus-visible,
+input:focus-visible,
+select:focus-visible {
+  outline: 2px solid var(--blue);
+  outline-offset: 3px;
 }
 
 .github-link {
@@ -184,11 +199,11 @@ a {
 .hero {
   display: grid;
   grid-template-columns: minmax(0, 1.2fr) minmax(360px, 0.65fr);
-  gap: clamp(56px, 7vw, 110px);
+  gap: clamp(40px, 5vw, 76px);
   align-items: center;
-  min-height: 570px;
-  padding-top: 88px;
-  padding-bottom: 96px;
+  min-height: 500px;
+  padding-top: 68px;
+  padding-bottom: 74px;
 }
 
 .kicker,
@@ -198,9 +213,9 @@ a {
 .snapshot-card__footer span,
 .signal-strip span {
   font-family: "DM Mono", monospace;
-  font-size: 10px;
+  font-size: 11px;
   font-weight: 500;
-  letter-spacing: 0.12em;
+  letter-spacing: 0.09em;
   text-transform: uppercase;
 }
 
@@ -208,7 +223,7 @@ a {
   display: flex;
   gap: 9px;
   align-items: center;
-  margin: 0 0 28px;
+  margin: 0 0 22px;
   color: var(--blue-dark);
 }
 
@@ -231,7 +246,7 @@ a {
 
 .hero-subtitle {
   max-width: 900px;
-  margin: 28px 0 0;
+  margin: 22px 0 0;
   color: var(--blue-dark);
   font-size: clamp(20px, 2.1vw, 29px);
   font-weight: 750;
@@ -241,18 +256,18 @@ a {
 
 .hero-description {
   max-width: 760px;
-  margin: 20px 0 0;
+  margin: 16px 0 0;
   color: var(--muted);
-  font-size: 15px;
-  line-height: 1.75;
+  font-size: 16px;
+  line-height: 1.7;
 }
 
 .hero-actions {
   display: flex;
   flex-wrap: wrap;
-  gap: 25px;
+  gap: 18px;
   align-items: center;
-  margin-top: 32px;
+  margin-top: 26px;
 }
 
 .primary-action {
@@ -309,7 +324,7 @@ a {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding: 18px 20px;
+  padding: 16px 20px;
 }
 
 .snapshot-card__top {
@@ -342,10 +357,10 @@ a {
 }
 
 .snapshot-grid div {
-  min-height: 132px;
+  min-height: 116px;
   border-right: 1px solid var(--line);
   border-bottom: 1px solid var(--line);
-  padding: 24px 20px;
+  padding: 20px;
 }
 
 .snapshot-grid div:nth-child(even) {
@@ -358,7 +373,7 @@ a {
 }
 
 .snapshot-grid dd {
-  margin: 15px 0 0;
+  margin: 11px 0 0;
   font-family: "DM Mono", monospace;
   font-size: clamp(24px, 3vw, 36px);
   font-weight: 500;
@@ -406,16 +421,16 @@ a {
 .ranking-section,
 .methodology-section {
   scroll-margin-top: 100px;
-  padding-top: 120px;
-  padding-bottom: 120px;
+  padding-top: 90px;
+  padding-bottom: 90px;
 }
 
 .section-heading {
   display: flex;
-  gap: 40px;
+  gap: 30px;
   align-items: flex-end;
   justify-content: space-between;
-  margin-bottom: 35px;
+  margin-bottom: 28px;
 }
 
 .section-index {
@@ -448,10 +463,10 @@ a {
 }
 
 .seo-ranking-summary {
-  margin-bottom: 24px;
+  margin-bottom: 22px;
   border: 1px solid var(--line);
   border-left: 4px solid var(--blue);
-  padding: 20px 22px;
+  padding: 18px 20px;
   background: rgba(255, 253, 248, 0.72);
 }
 
@@ -465,8 +480,8 @@ a {
 .seo-ranking-summary p {
   margin: 6px 0 0;
   color: var(--muted);
-  font-size: 12px;
-  line-height: 1.85;
+  font-size: 14px;
+  line-height: 1.78;
 }
 
 .seo-ranking-summary a {
@@ -479,15 +494,16 @@ a {
 .control-panel label {
   display: flex;
   min-width: 0;
+  min-height: 62px;
   flex-direction: column;
-  gap: 8px;
+  gap: 7px;
   border-right: 1px solid var(--line);
-  padding: 13px 15px 14px;
+  padding: 11px 15px 12px;
 }
 
 .control-label {
   color: var(--muted);
-  font-size: 9px;
+  font-size: 10px;
 }
 
 .control-panel input,
@@ -498,7 +514,7 @@ a {
   outline: 0;
   background: transparent;
   color: var(--ink);
-  font-size: 13px;
+  font-size: 14px;
   font-weight: 700;
 }
 
@@ -567,13 +583,13 @@ thead th {
   height: 46px;
   border-right: 1px solid #30394d;
   border-bottom: 1px solid var(--ink);
-  padding: 0 15px;
+  padding: 0 14px;
   background: var(--ink);
   color: #ffffff;
   font-family: "DM Mono", monospace;
-  font-size: 9px;
+  font-size: 11px;
   font-weight: 500;
-  letter-spacing: 0.1em;
+  letter-spacing: 0.07em;
   text-transform: uppercase;
 }
 
@@ -583,10 +599,10 @@ thead th:last-child {
 
 tbody td,
 tbody th {
-  height: 100px;
+  height: 90px;
   border-right: 1px solid var(--line);
   border-bottom: 1px solid var(--line);
-  padding: 14px 15px;
+  padding: 12px 14px;
   background: var(--paper-raised);
   vertical-align: middle;
 }
@@ -641,7 +657,7 @@ thead .site-column {
   place-items: center;
   border: 1px solid var(--line-dark);
   font-family: "DM Mono", monospace;
-  font-size: 12px;
+  font-size: 13px;
   font-weight: 500;
 }
 
@@ -667,7 +683,7 @@ thead .site-column {
 
 .site-link {
   display: flex;
-  gap: 12px;
+  gap: 10px;
   align-items: center;
   text-decoration: none;
 }
@@ -697,7 +713,7 @@ thead .site-column {
   gap: 5px;
   align-items: center;
   color: var(--ink);
-  font-size: 14px;
+  font-size: 15px;
   font-weight: 800;
 }
 
@@ -710,15 +726,6 @@ thead .site-column {
   stroke-width: 1.8;
 }
 
-.site-domain {
-  overflow: hidden;
-  color: var(--muted);
-  font-family: "DM Mono", monospace;
-  font-size: 9px;
-  text-overflow: ellipsis;
-  white-space: nowrap;
-}
-
 .quality-cell {
   width: 210px;
 }
@@ -726,13 +733,13 @@ thead .site-column {
 .quality-grid {
   display: grid;
   grid-template-columns: 1fr 1fr;
-  gap: 14px;
+  gap: 11px;
 }
 
 .quality-item {
   display: flex;
   flex-direction: column;
-  gap: 6px;
+  gap: 5px;
 }
 
 .quality-item span,
@@ -740,14 +747,14 @@ thead .site-column {
 .policy-label {
   color: var(--muted);
   font-family: "DM Mono", monospace;
-  font-size: 8px;
-  letter-spacing: 0.08em;
+  font-size: 10px;
+  letter-spacing: 0.05em;
   text-transform: uppercase;
 }
 
 .quality-item strong {
   font-family: "DM Mono", monospace;
-  font-size: 13px;
+  font-size: 14px;
   font-weight: 500;
 }
 
@@ -785,7 +792,7 @@ thead .site-column {
   display: flex;
   gap: 6px;
   align-items: baseline;
-  margin-bottom: 8px;
+  margin-bottom: 6px;
 }
 
 .model-headline strong {
@@ -797,7 +804,7 @@ thead .site-column {
 
 .model-headline span {
   color: var(--muted);
-  font-size: 10px;
+  font-size: 11px;
 }
 
 .tag-list,
@@ -813,7 +820,7 @@ thead .site-column {
   padding: 3px 6px;
   background: var(--paper);
   color: var(--ink-soft);
-  font-size: 9px;
+  font-size: 10px;
   font-weight: 700;
   white-space: nowrap;
 }
@@ -865,7 +872,7 @@ thead .site-column {
 
 .policy-list {
   display: grid;
-  gap: 7px;
+  gap: 6px;
 }
 
 .policy-item {
@@ -876,12 +883,12 @@ thead .site-column {
 
 .policy-status {
   display: inline-flex;
-  min-width: 42px;
+  min-width: 46px;
   justify-content: center;
   border: 1px solid var(--line);
   padding: 2px 5px;
   font-family: "DM Mono", monospace;
-  font-size: 8px;
+  font-size: 10px;
   font-weight: 500;
 }
 
@@ -945,9 +952,9 @@ thead .site-column {
 }
 
 .data-note {
-  margin: 18px 0 0;
+  margin: 16px 0 0;
   color: var(--muted);
-  font-size: 11px;
+  font-size: 12px;
   line-height: 1.7;
 }
 
@@ -969,10 +976,10 @@ thead .site-column {
 
 .method-grid article {
   position: relative;
-  min-height: 270px;
+  min-height: 230px;
   border-right: 1px solid var(--ink);
   border-bottom: 1px solid var(--ink);
-  padding: 28px;
+  padding: 24px;
   background: var(--paper-raised);
 }
 
@@ -983,7 +990,7 @@ thead .site-column {
 }
 
 .method-grid h3 {
-  margin: 70px 0 13px;
+  margin: 48px 0 12px;
   font-size: 23px;
   letter-spacing: -0.04em;
 }
@@ -991,8 +998,8 @@ thead .site-column {
 .method-grid p {
   margin: 0;
   color: var(--muted);
-  font-size: 13px;
-  line-height: 1.75;
+  font-size: 14px;
+  line-height: 1.7;
 }
 
 .method-grid .method-card--accent {
@@ -1008,17 +1015,17 @@ thead .site-column {
 .compare-section {
   display: grid;
   grid-template-columns: 0.7fr 1.3fr;
-  gap: clamp(60px, 9vw, 140px);
+  gap: clamp(36px, 6vw, 80px);
   align-items: center;
-  padding-top: 40px;
-  padding-bottom: 130px;
+  padding-top: 30px;
+  padding-bottom: 94px;
 }
 
 .compare-copy > p:not(.section-index) {
-  margin: 24px 0 28px;
+  margin: 20px 0 24px;
   color: var(--muted);
-  font-size: 14px;
-  line-height: 1.8;
+  font-size: 15px;
+  line-height: 1.75;
 }
 
 .mini-table-wrap {
@@ -1054,14 +1061,14 @@ thead .site-column {
 }
 
 .guide-section {
-  padding-bottom: 120px;
+  padding-bottom: 90px;
 }
 
 .guide-grid {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
-  gap: 20px;
-  margin-top: 28px;
+  gap: 16px;
+  margin-top: 24px;
 }
 
 .guide-card {
@@ -1081,12 +1088,12 @@ thead .site-column {
 .guide-card p {
   margin: 0;
   color: var(--muted);
-  font-size: 12px;
-  line-height: 1.85;
+  font-size: 14px;
+  line-height: 1.75;
 }
 
 .faq-block {
-  margin-top: 44px;
+  margin-top: 34px;
 }
 
 .faq-block h3 {
@@ -1105,10 +1112,10 @@ thead .site-column {
 }
 
 .faq-item summary {
-  padding: 18px 34px 18px 0;
+  padding: 17px 34px 17px 0;
   position: relative;
   cursor: pointer;
-  font-size: 14px;
+  font-size: 15px;
   font-weight: 700;
   list-style: none;
 }
@@ -1138,15 +1145,15 @@ thead .site-column {
 
 .faq-item p {
   margin: 0;
-  padding: 0 34px 22px 0;
+  padding: 0 34px 20px 0;
   color: var(--muted);
-  font-size: 13px;
-  line-height: 1.9;
+  font-size: 14px;
+  line-height: 1.78;
 }
 
 .vendor-links {
-  margin-top: 44px;
-  padding-top: 32px;
+  margin-top: 34px;
+  padding-top: 26px;
   border-top: 1px solid var(--line);
 }
 
@@ -1158,10 +1165,10 @@ thead .site-column {
 }
 
 .vendor-links > p {
-  margin: 0 0 20px;
+  margin: 0 0 18px;
   color: var(--muted);
-  font-size: 13px;
-  line-height: 1.8;
+  font-size: 14px;
+  line-height: 1.75;
 }
 
 .vendor-link-list {
@@ -1219,8 +1226,8 @@ thead .site-column {
 
 .vendor-hero {
   min-height: auto;
-  padding-top: 70px;
-  padding-bottom: 50px;
+  padding-top: 54px;
+  padding-bottom: 40px;
 }
 
 .site-footer {
@@ -1248,7 +1255,7 @@ thead .site-column {
 .footer-meta p {
   margin: 16px 0 0;
   color: #aeb6c7;
-  font-size: 11px;
+  font-size: 12px;
 }
 
 .footer-meta {
@@ -1265,8 +1272,8 @@ thead .site-column {
 
 @media (max-width: 1180px) {
   .hero {
-    grid-template-columns: 1fr 410px;
-    gap: 55px;
+    grid-template-columns: 1fr 400px;
+    gap: 42px;
   }
 
   .hero h1 {
@@ -1308,7 +1315,9 @@ thead .site-column {
   .hero {
     grid-template-columns: 1fr;
     min-height: auto;
-    padding-top: 80px;
+    gap: 42px;
+    padding-top: 60px;
+    padding-bottom: 66px;
   }
 
   .hero-copy {
@@ -1350,8 +1359,20 @@ thead .site-column {
     grid-column: 1 / -1;
   }
 
+  .control-panel input,
+  .control-panel select {
+    font-size: 16px;
+  }
+
+  .ranking-section,
+  .methodology-section {
+    padding-top: 72px;
+    padding-bottom: 72px;
+  }
+
   .compare-section {
     grid-template-columns: 1fr;
+    gap: 42px;
   }
 }
 
@@ -1365,7 +1386,7 @@ thead .site-column {
   }
 
   .guide-section {
-    padding-bottom: 80px;
+    padding-bottom: 60px;
   }
 
   .header-inner {
@@ -1373,13 +1394,13 @@ thead .site-column {
   }
 
   .github-link {
-    font-size: 9px;
+    font-size: 11px;
   }
 
   .hero {
-    gap: 55px;
-    padding-top: 58px;
-    padding-bottom: 70px;
+    gap: 36px;
+    padding-top: 46px;
+    padding-bottom: 56px;
   }
 
   .hero h1 {
@@ -1392,7 +1413,7 @@ thead .site-column {
   }
 
   .hero-description {
-    font-size: 14px;
+    font-size: 15px;
   }
 
   .snapshot-card {
@@ -1416,13 +1437,13 @@ thead .site-column {
   .signal-strip p {
     min-height: 70px;
     padding: 0 13px;
-    font-size: 11px;
+    font-size: 12px;
   }
 
   .ranking-section,
   .methodology-section {
-    padding-top: 84px;
-    padding-bottom: 84px;
+    padding-top: 60px;
+    padding-bottom: 60px;
   }
 
   .section-heading {
@@ -1435,7 +1456,7 @@ thead .site-column {
 
   .section-heading h2,
   .compare-copy h2 {
-    font-size: 37px;
+    font-size: 35px;
   }
 
   .control-panel {
@@ -1465,16 +1486,16 @@ thead .site-column {
   }
 
   .method-grid article {
-    min-height: 235px;
+    min-height: 215px;
   }
 
   .method-grid h3 {
-    margin-top: 55px;
+    margin-top: 42px;
   }
 
   .compare-section {
-    gap: 45px;
-    padding-bottom: 95px;
+    gap: 34px;
+    padding-bottom: 68px;
   }
 
   .footer-inner {
@@ -1501,8 +1522,8 @@ thead .site-column {
 }
 
 .vendor-intro {
-  margin: 24px 0;
-  padding: 24px 26px;
+  margin: 20px 0;
+  padding: 20px 22px;
   border: 1px solid var(--line);
   background: var(--paper-raised);
 }
@@ -1517,8 +1538,8 @@ thead .site-column {
 .vendor-intro p {
   margin: 0;
   color: var(--muted);
-  font-size: 13px;
-  line-height: 1.9;
+  font-size: 14px;
+  line-height: 1.78;
 }
 
 .vendor-tip {
@@ -1526,7 +1547,7 @@ thead .site-column {
   padding: 12px 15px;
   border-left: 3px solid var(--orange);
   background: var(--paper);
-  font-size: 12px !important;
+  font-size: 13px !important;
 }
 
 .vendor-tip strong {

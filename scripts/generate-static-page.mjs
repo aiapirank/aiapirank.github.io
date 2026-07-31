@@ -306,7 +306,6 @@ function renderSite(site) {
                       <span class="site-avatar">${escapeHtml(initial)}</span>
                       <span class="site-copy">
                         <span class="site-name">${escapeHtml(site.name)}<svg viewBox="0 0 16 16" aria-hidden="true"><path d="M6 3h7v7M13 3 6 10M11 9v4H3V5h4"></path></svg></span>
-                        <span class="site-domain">${escapeHtml(getDomain(url))}</span>
                       </span>
                     </a>
                   </th>
@@ -460,7 +459,6 @@ function renderVendorRow(site, position) {
                   <span class="site-avatar">${escapeHtml(Array.from(site.name.trim())[0] || "A")}</span>
                   <span class="site-copy">
                     <span class="site-name">${escapeHtml(site.name)}</span>
-                    <span class="site-domain">${escapeHtml(getDomain(url))}</span>
                   </span>
                 </a>
               </th>
