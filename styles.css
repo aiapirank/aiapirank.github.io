@@ -580,16 +580,16 @@ th {
 }
 
 thead th {
-  height: 46px;
+  height: 42px;
   border-right: 1px solid #30394d;
   border-bottom: 1px solid var(--ink);
-  padding: 0 14px;
+  padding: 0 12px;
   background: var(--ink);
   color: #ffffff;
   font-family: "DM Mono", monospace;
-  font-size: 11px;
+  font-size: 13px;
   font-weight: 500;
-  letter-spacing: 0.07em;
+  letter-spacing: 0.04em;
   text-transform: uppercase;
 }
 
@@ -599,10 +599,10 @@ thead th:last-child {
 
 tbody td,
 tbody th {
-  height: 90px;
+  height: 74px;
   border-right: 1px solid var(--line);
   border-bottom: 1px solid var(--line);
-  padding: 12px 14px;
+  padding: 8px 12px;
   background: var(--paper-raised);
   vertical-align: middle;
 }
@@ -652,12 +652,12 @@ thead .site-column {
 
 .rank-number {
   display: inline-grid;
-  width: 38px;
-  height: 38px;
+  width: 34px;
+  height: 34px;
   place-items: center;
   border: 1px solid var(--line-dark);
   font-family: "DM Mono", monospace;
-  font-size: 13px;
+  font-size: 14px;
   font-weight: 500;
 }
 
@@ -690,14 +690,14 @@ thead .site-column {
 
 .site-avatar {
   display: grid;
-  width: 40px;
-  height: 40px;
+  width: 36px;
+  height: 36px;
   flex: 0 0 auto;
   place-items: center;
   border: 1px solid var(--ink);
   background: var(--paper);
   color: var(--blue-dark);
-  font-size: 15px;
+  font-size: 16px;
   font-weight: 800;
 }
 
@@ -713,7 +713,7 @@ thead .site-column {
   gap: 5px;
   align-items: center;
   color: var(--ink);
-  font-size: 15px;
+  font-size: 16px;
   font-weight: 800;
 }
 
@@ -733,13 +733,13 @@ thead .site-column {
 .quality-grid {
   display: grid;
   grid-template-columns: 1fr 1fr;
-  gap: 11px;
+  gap: 10px;
 }
 
 .quality-item {
   display: flex;
   flex-direction: column;
-  gap: 5px;
+  gap: 3px;
 }
 
 .quality-item span,
@@ -747,14 +747,14 @@ thead .site-column {
 .policy-label {
   color: var(--muted);
   font-family: "DM Mono", monospace;
-  font-size: 10px;
-  letter-spacing: 0.05em;
-  text-transform: uppercase;
+  font-size: 13px;
+  letter-spacing: 0;
+  text-transform: none;
 }
 
 .quality-item strong {
   font-family: "DM Mono", monospace;
-  font-size: 14px;
+  font-size: 16px;
   font-weight: 500;
 }
 
@@ -773,7 +773,7 @@ thead .site-column {
 .uptime-track {
   position: relative;
   width: 100%;
-  height: 4px;
+  height: 3px;
   overflow: hidden;
   background: #dfe2e9;
 }
@@ -792,19 +792,19 @@ thead .site-column {
   display: flex;
   gap: 6px;
   align-items: baseline;
-  margin-bottom: 6px;
+  margin-bottom: 4px;
 }
 
 .model-headline strong {
   color: var(--blue-dark);
   font-family: "DM Mono", monospace;
-  font-size: 19px;
+  font-size: 20px;
   font-weight: 500;
 }
 
 .model-headline span {
   color: var(--muted);
-  font-size: 11px;
+  font-size: 13px;
 }
 
 .tag-list,
@@ -817,11 +817,12 @@ thead .site-column {
 .tag,
 .payment-tag {
   border: 1px solid var(--line);
-  padding: 3px 6px;
+  padding: 2px 5px;
   background: var(--paper);
   color: var(--ink-soft);
-  font-size: 10px;
+  font-size: 12px;
   font-weight: 700;
+  line-height: 1.25;
   white-space: nowrap;
 }
 
@@ -842,7 +843,7 @@ thead .site-column {
 
 .rating-score strong {
   font-family: "DM Mono", monospace;
-  font-size: 20px;
+  font-size: 21px;
   font-weight: 500;
 }
 
@@ -853,9 +854,7 @@ thead .site-column {
 
 .rating-caption {
   display: block;
-  margin-top: 6px;
-  letter-spacing: 0;
-  text-transform: none;
+  margin-top: 3px;
 }
 
 .payment-cell {
@@ -872,7 +871,7 @@ thead .site-column {
 
 .policy-list {
   display: grid;
-  gap: 6px;
+  gap: 4px;
 }
 
 .policy-item {
@@ -883,13 +882,14 @@ thead .site-column {
 
 .policy-status {
   display: inline-flex;
-  min-width: 46px;
+  min-width: 48px;
   justify-content: center;
   border: 1px solid var(--line);
   padding: 2px 5px;
   font-family: "DM Mono", monospace;
-  font-size: 10px;
+  font-size: 12px;
   font-weight: 500;
+  line-height: 1.25;
 }
 
 .policy-status--yes {
