@@ -173,6 +173,7 @@ function normalizeSite(site, index) {
     rank: Number(site.rank) || index + 1,
     name: String(site.name || "未命名站点"),
     url: String(site.url || "#"),
+    establishedDate: String(site.establishedDate || "").trim(),
     models,
     modelCount: Number.isFinite(modelCount) ? modelCount : models.length,
     uptime: toFiniteNumber(site.uptime),
@@ -251,6 +252,24 @@ function formatLatency(value) {
   return `${Math.round(value)} ms`;
 }
 
+function formatEstablishedDate(value) {
+  if (!value) return "";
+  if (/^\d{4}-\d{2}-\d{2}$/.test(value)) return value.replaceAll("-", ".");
+
+  const date = new Date(value);
+  if (Number.isNaN(date.getTime())) return value;
+  return new Intl.DateTimeFormat("zh-CN", {
+    year: "numeric",
+    month: "2-digit",
+    day: "2-digit",
+  }).format(date).replaceAll("/", ".");
+}
+
+function renderEstablishedDate(site) {
+  if (!site.establishedDate) return "";
+  return `<span class="site-established-date">创建于 <time datetime="${escapeHtml(site.establishedDate)}">${escapeHtml(formatEstablishedDate(site.establishedDate))}</time></span>`;
+}
+
 function qualityClass(type, value) {
   if (!Number.isFinite(value)) return "medium";
   if (type === "uptime") {
@@ -305,7 +324,7 @@ function renderSite(site) {
                     <a class="site-link" href="${escapeHtml(url)}" target="_blank" rel="nofollow noopener" referrerpolicy="strict-origin-when-cross-origin">
                       <span class="site-avatar">${escapeHtml(initial)}</span>
                       <span class="site-copy">
-                        <span class="site-name">${escapeHtml(site.name)}<svg viewBox="0 0 16 16" aria-hidden="true"><path d="M6 3h7v7M13 3 6 10M11 9v4H3V5h4"></path></svg></span>
+                        <span class="site-name">${escapeHtml(site.name)}<svg viewBox="0 0 16 16" aria-hidden="true"><path d="M6 3h7v7M13 3 6 10M11 9v4H3V5h4"></path></svg></span>${renderEstablishedDate(site)}
                       </span>
                     </a>
                   </th>
@@ -458,7 +477,7 @@ function renderVendorRow(site, position) {
                 <a class="site-link" href="${escapeHtml(url)}" target="_blank" rel="nofollow noopener" referrerpolicy="strict-origin-when-cross-origin">
                   <span class="site-avatar">${escapeHtml(Array.from(site.name.trim())[0] || "A")}</span>
                   <span class="site-copy">
-                    <span class="site-name">${escapeHtml(site.name)}</span>
+                    <span class="site-name">${escapeHtml(site.name)}</span>${renderEstablishedDate(site)}
                   </span>
                 </a>
               </th>

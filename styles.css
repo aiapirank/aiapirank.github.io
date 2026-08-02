@@ -719,11 +719,21 @@ thead .site-column {
 
 .site-name svg {
   width: 13px;
+  flex: 0 0 auto;
   fill: none;
   stroke: var(--blue);
   stroke-linecap: round;
   stroke-linejoin: round;
   stroke-width: 1.8;
+}
+
+.site-established-date {
+  color: var(--muted);
+  font-family: "DM Mono", monospace;
+  font-size: 11px;
+  font-weight: 500;
+  line-height: 1.25;
+  white-space: nowrap;
 }
 
 .quality-cell {
