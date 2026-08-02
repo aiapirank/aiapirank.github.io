@@ -302,7 +302,7 @@ function renderSite(site) {
   return `                <tr>
                   <td class="rank-cell"><span class="rank-number${rankClass}" aria-label="第 ${site.rank} 名">${site.rank}</span></td>
                   <th class="site-cell" scope="row">
-                    <a class="site-link" href="${escapeHtml(url)}" target="_blank" rel="nofollow noopener noreferrer">
+                    <a class="site-link" href="${escapeHtml(url)}" target="_blank" rel="nofollow noopener" referrerpolicy="strict-origin-when-cross-origin">
                       <span class="site-avatar">${escapeHtml(initial)}</span>
                       <span class="site-copy">
                         <span class="site-name">${escapeHtml(site.name)}<svg viewBox="0 0 16 16" aria-hidden="true"><path d="M6 3h7v7M13 3 6 10M11 9v4H3V5h4"></path></svg></span>
@@ -330,7 +330,7 @@ function renderSeoSummary(sites, updatedDate) {
     : "2026 年";
   const details = topThree.map((site) => {
     const url = escapeHtml(safeUrl(site.url));
-    return `<a href="${url}" rel="nofollow noopener noreferrer">${escapeHtml(site.name)}</a> 排名第 ${site.rank}，在线率 ${formatPercent(site.uptime)}、平均延迟 ${formatLatency(site.latencyMs)}，覆盖 ${site.modelCount} 个模型`;
+    return `<a href="${url}" rel="nofollow noopener" referrerpolicy="strict-origin-when-cross-origin">${escapeHtml(site.name)}</a> 排名第 ${site.rank}，在线率 ${formatPercent(site.uptime)}、平均延迟 ${formatLatency(site.latencyMs)}，覆盖 ${site.modelCount} 个模型`;
   }).join("；");
 
   return `        <div class="seo-ranking-summary">
@@ -455,7 +455,7 @@ function renderVendorRow(site, position) {
   return `            <tr>
               <td class="rank-cell"><span class="rank-number${position <= 3 ? ` rank-number--${position}` : ""}">${position}</span></td>
               <th class="site-cell" scope="row">
-                <a class="site-link" href="${escapeHtml(url)}" target="_blank" rel="nofollow noopener noreferrer">
+                <a class="site-link" href="${escapeHtml(url)}" target="_blank" rel="nofollow noopener" referrerpolicy="strict-origin-when-cross-origin">
                   <span class="site-avatar">${escapeHtml(Array.from(site.name.trim())[0] || "A")}</span>
                   <span class="site-copy">
                     <span class="site-name">${escapeHtml(site.name)}</span>

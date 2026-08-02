@@ -163,7 +163,7 @@ function renderSite(site) {
         <span class="rank-number${rankClass}" aria-label="第 ${site.rank} 名">${site.rank}</span>
       </td>
       <th class="site-cell" scope="row">
-        <a class="site-link" href="${escapeHtml(url)}" target="_blank" rel="nofollow noopener noreferrer">
+        <a class="site-link" href="${escapeHtml(url)}" target="_blank" rel="nofollow noopener" referrerpolicy="strict-origin-when-cross-origin">
           <span class="site-avatar">${escapeHtml(initial)}</span>
           <span class="site-copy">
             <span class="site-name">
