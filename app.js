@@ -329,10 +329,8 @@ async function loadData() {
     elements.loadingState.hidden = true;
     elements.errorState.hidden = false;
     elements.tableContainer.hidden = false;
-    elements.resultSummary.textContent = "当前显示 HTML 静态数据快照";
-    elements.errorMessage.textContent = window.location.protocol === "file:"
-      ? "筛选功能需要通过本地 HTTP 服务或 GitHub Pages 访问；下方静态排行榜仍可正常阅读。"
-      : "实时筛选数据暂时无法读取；下方静态排行榜仍可正常阅读。";
+    elements.resultSummary.textContent = "筛选暂不可用，完整榜单仍可阅读";
+    elements.errorMessage.textContent = "筛选数据暂时无法读取，请稍后刷新；你仍可继续浏览下方完整榜单。";
   }
 }
 

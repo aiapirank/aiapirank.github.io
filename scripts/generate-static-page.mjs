@@ -421,15 +421,15 @@ function renderContentSection(coverage, faq, updatedDate, vendorCounts) {
   return `      <section class="guide-section shell" aria-labelledby="guide-title">
         <div class="section-heading">
           <div>
-            <p class="section-index">03 / METHODOLOGY</p>
-            <h2 id="guide-title">评测方法与数据说明</h2>
+            <p class="section-index">03 / 使用说明</p>
+            <h2 id="guide-title">怎样读这份榜单</h2>
           </div>
         </div>
 
         <div class="guide-grid">
           <article class="guide-card">
             <h3>数据从哪里来</h3>
-            <p>榜单收录 ${coverage.total} 家 AI API 中转站，指标来自禾维 AI 的公开监测数据，每天同步两次，当前快照为 ${escapeHtml(dateText)}。榜单不接受赞助投放，排名不出售，站点链接均标记为 nofollow。</p>
+            <p>榜单收录 ${coverage.total} 家 AI API 中转站，指标来自禾维 AI 的公开监测数据，每天更新两次，当前数据日期为 ${escapeHtml(dateText)}。榜单不接受赞助投放，排名不出售。</p>
           </article>
 
           <article class="guide-card">
@@ -646,7 +646,6 @@ ${jsonLd.split("\n").map((line) => `      ${line}`).join("\n")}
           <a href="../../">完整榜单</a>
           <a href="../../#faq-title">常见问题</a>
         </nav>
-        <a class="github-link" href="https://github.com/aiapirank/ai-ranking">GitHub <span aria-hidden="true">↗</span></a>
       </div>
     </header>
 
@@ -659,15 +658,14 @@ ${jsonLd.split("\n").map((line) => `      ${line}`).join("\n")}
           <h1 id="page-title">${escapeHtml(vendor.keyword)}推荐排行榜</h1>
           <p class="hero-description">在 ${totalSites} 家中转站中筛选出 ${stats.count} 家支持 ${escapeHtml(vendor.label)} 的服务，按综合表现排序。数据更新于 ${escapeHtml(displayDate)}。</p>
         </div>
-        <aside class="snapshot-card" aria-label="数据快照">
-          <div class="snapshot-card__top"><span>${escapeHtml(vendor.label.toUpperCase())}</span><span class="status-pill"><i></i> LIVE</span></div>
+        <aside class="snapshot-card" aria-label="榜单概览">
           <dl class="snapshot-grid">
             <div><dt>支持站点</dt><dd>${stats.count}</dd></div>
             <div><dt>平均在线率</dt><dd>${formatPercent(stats.averageUptime)}</dd></div>
             <div><dt>中位延迟</dt><dd>${formatLatency(stats.medianLatency)}</dd></div>
             <div><dt>高可用站点</dt><dd>${stats.highUptime}</dd></div>
           </dl>
-          <div class="snapshot-card__footer"><span>LAST UPDATE</span><strong>${escapeHtml(displayDate)}</strong></div>
+          <div class="snapshot-card__footer"><span>更新于</span><strong>${escapeHtml(displayDate)}</strong></div>
         </aside>
       </section>
 
@@ -749,7 +747,7 @@ ${faq.map((item) => `            <details class="faq-item">
             <span class="brand-mark" aria-hidden="true"><span></span><span></span><span></span></span>
             <span><strong>AI API</strong><small>RANK / 2026</small></span>
           </a>
-          <p>公开数据的另一种阅读方式。</p>
+          <p>先比较，再小额测试；重要调用保留备用方案。</p>
         </div>
         <div class="footer-meta">
           <p>数据来源：<a href="https://www.hvoy.ai" target="_blank" rel="noreferrer">禾维 AI</a></p>
@@ -832,28 +830,6 @@ function buildStructuredData(data, sites, faq) {
         description: `基于真实体验和公开监测数据，对 ${sites.length} 家 AI API 中转站的在线率、延迟、模型数量、用户评分、支付方式、退款和发票服务进行对比。`,
         mainEntity: { "@id": "https://aiapirank.github.io/#ranking-list" },
         inLanguage: "zh-CN",
-      },
-      {
-        "@type": "Dataset",
-        "@id": "https://aiapirank.github.io/#dataset",
-        name: "2026 AI 中转站排行榜数据",
-        description:
-          `基于真实体验与公开监测的 AI API 中转站排行榜数据集，收录 ${sites.length} 家中转站的排名、在线率、平均延迟、模型覆盖范围、用户评分、支付方式、退款与发票支持等结构化指标，供开发者对比参考。`,
-        url: "https://aiapirank.github.io/",
-        dateModified: data.updatedDate || data.generatedAt,
-        isAccessibleForFree: true,
-        license: "https://creativecommons.org/licenses/by-nc-sa/4.0/",
-        creator: {
-          "@type": "Organization",
-          name: "AI API Rank",
-          url: "https://aiapirank.github.io/",
-        },
-        distribution: {
-          "@type": "DataDownload",
-          encodingFormat: "application/json",
-          contentUrl: "https://aiapirank.github.io/data.json",
-        },
-        variableMeasured: ["排名", "在线率", "平均延迟", "模型数量", "模型厂商", "用户评分", "支付方式", "退款支持", "发票支持"],
       },
       {
         "@type": "ItemList",
