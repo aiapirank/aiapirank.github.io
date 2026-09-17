@@ -10,6 +10,17 @@ const indexPath = path.join(projectRoot, "index.html");
 const sitemapPath = path.join(projectRoot, "sitemap.xml");
 const vendorDirectory = path.join(projectRoot, "vendor");
 const siteOrigin = "https://aiapirank.github.io";
+const BAIDU_TONGJI_SCRIPT = [
+  "<script>",
+  "var _hmt = _hmt || [];",
+  "(function() {",
+  "  var hm = document.createElement(\"script\");",
+  "  hm.src = \"https://hm.baidu.com/hm.js?9d81e528d59ddfaa2cb20f123ad302ed\";",
+  "  var s = document.getElementsByTagName(\"script\")[0];",
+  "  s.parentNode.insertBefore(hm, s);",
+  "})();",
+  "</script>",
+].join("\n");
 const sourceUrl = process.env.DATA_SOURCE_URL
   || "https://raw.githubusercontent.com/hvoyai/awesome-ai-api/main/data.json";
 const shouldSync = process.argv.includes("--sync");
@@ -634,6 +645,7 @@ function renderVendorPage(vendor, matches, updatedDate, totalSites) {
     <script type="application/ld+json">
 ${jsonLd.split("\n").map((line) => `      ${line}`).join("\n")}
     </script>
+    ${BAIDU_TONGJI_SCRIPT}
   </head>
   <body>
     <header class="site-header">
